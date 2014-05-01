@@ -43,8 +43,8 @@ This uses the normal JavaScript files and loads libraries from the downloaded We
 ### Prod Mode
 
 * Produce executable via `play clean dist`
-* Extract `unzip target/universal/play-angular-require-seed-2.2.2.zip`
-* Run `play-angular-require-seed-2.2.2/bin/play-angular-require-seed -Dhttp.port=9000 -Dconfig.resource=prod.conf`
+* Extract `unzip target/universal/play-angular-require-seed-2.2.3.zip`
+* Run `play-angular-require-seed-2.2.3/bin/play-angular-require-seed -Dhttp.port=9000 -Dconfig.resource=prod.conf`
 
 This uses the uglified JavaScript files and loads WebJars resources from the jsDelivr CDN.
 
