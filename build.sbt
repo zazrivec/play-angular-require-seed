@@ -6,7 +6,7 @@ version := "2.2.3"
 
 libraryDependencies ++= Seq(
   // WebJars infrastructure
-  "org.webjars" % "webjars-locator" % "0.14",
+  "org.webjars" % "webjars-locator" % "0.13",
   "org.webjars" %% "webjars-play" % "2.2.2",
   // WebJars dependencies
   "org.webjars" % "underscorejs" % "1.6.0-1",
