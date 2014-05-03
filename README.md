@@ -53,3 +53,5 @@ This uses the uglified JavaScript files and loads WebJars resources from the jsD
 This application is also published an a Typesafe Activator template:
 
 http://typesafe.com/activator/template/play-with-angular-requirejs
+
+[![Build Status](https://travis-ci.org/zazrivec/play-angular-require-seed.svg?branch=master)](https://travis-ci.org/zazrivec/play-angular-require-seed)
