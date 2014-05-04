@@ -11,4 +11,7 @@ notifications:
 deploy:
   provider: heroku
   api_key:
-    secure: JxVTgdx189uL5jPxC5ffnQCrA7dN64EeV4iQoOCT02fRHnq3t3tG12buz+PZGFlQKsf/ijXfG10MhbxC/6NqPYjqdDEIt3tboKjZF2uWL3QyCfeRoQOB+6VybHpnwgpj54vqFkjnpWtKAYIGr4gcYwkBHM8hvemstZ2KN3keNRk=
+    secure: lCnIz84gXFW8vU/rCiEmhLQEgaztyy13LGa8Jd2ptLgCHkfvDuok8s8XfkbsZTSRiO8G9hnSv4GDrh6QtVLr7Pf6ig3fCbDkOK+jaAQnjtB5AQJBimZ7/G7Qk1TQeAkcqHS+sd+lwoNxlxwe2IhRYpRv/k8WCGGARvsqa21igBM=
+  app: play-angular-require-seed
+  on:
+    repo: zazrivec/play-angular-require-seed
