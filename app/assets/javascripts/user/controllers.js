@@ -1,7 +1,7 @@
 /**
  * User controllers.
  */
-define(["angular"], function(angular) {
+define([], function() {
   "use strict";
 
   var LoginCtrl = function($scope, $location, userService) {

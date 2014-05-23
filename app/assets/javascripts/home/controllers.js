@@ -1,7 +1,7 @@
 /**
  * Home controllers.
  */
-define(["angular"], function(angular) {
+define([], function() {
   "use strict";
 
   /** Controls the index page */

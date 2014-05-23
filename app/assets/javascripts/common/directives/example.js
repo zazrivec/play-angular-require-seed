@@ -10,7 +10,7 @@ define(["angular"], function(angular) {
   mod.directive("example", ["$log", function($log) {
     return {
       restrict: "AE",
-      link: function(scope, el, attrs) {
+      link: function(/*scope, el, attrs*/) {
         $log.info("Here prints the example directive from /common/directives.");
       }
     };

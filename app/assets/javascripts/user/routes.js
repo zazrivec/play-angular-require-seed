@@ -2,6 +2,8 @@
  * Configure routes of user module.
  */
 define(["angular", "./controllers", "common"], function(angular, controllers) {
+  'use strict';
+
   var mod = angular.module("user.routes", ["user.services", "yourprefix.common"]);
   mod.config(["$routeProvider", function($routeProvider) {
     $routeProvider

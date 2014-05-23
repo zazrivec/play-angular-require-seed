@@ -49,7 +49,7 @@ define(["angular", "common"], function(angular) {
    * If the current route does not resolve, go back to the start page.
    */
   var handleRouteError = function($rootScope, $location) {
-    $rootScope.$on("$routeChangeError", function(e, next, current) {
+    $rootScope.$on("$routeChangeError", function(/*e, next, current*/) {
       $location.path("/");
     });
   };

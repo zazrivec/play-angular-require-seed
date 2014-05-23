@@ -1,7 +1,7 @@
 /**
  * Dashboard controllers.
  */
-define(["angular"], function() {
+define([], function() {
   "use strict";
 
   /**
