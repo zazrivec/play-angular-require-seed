@@ -1,30 +1,46 @@
-import play.Project._
+import PlayKeys._
+import com.typesafe.sbt.web.SbtWeb.autoImport.WebJs._
+
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 name := "play-angular-require-seed"
 
-version := "2.2.2"
+version := "2.3.0-RC2"
+
+scalaVersion := "2.10.4"
 
 libraryDependencies ++= Seq(
-  // WebJars infrastructure
-  "org.webjars" % "webjars-locator" % "0.13",
-  "org.webjars" %% "webjars-play" % "2.2.1-2",
   // WebJars dependencies
-  "org.webjars" % "underscorejs" % "1.6.0-1",
-  "org.webjars" % "jquery" % "1.11.0-1",
-  "org.webjars" % "bootstrap" % "3.1.1" exclude("org.webjars", "jquery"),
-  "org.webjars" % "angularjs" % "1.2.14" exclude("org.webjars", "jquery")
+  "org.webjars" % "requirejs" % "2.1.11-1",
+  "org.webjars" % "underscorejs" % "1.6.0-3",
+  "org.webjars" % "jquery" % "1.11.1",
+  "org.webjars" % "bootstrap" % "3.1.1-1" exclude("org.webjars", "jquery"),
+  "org.webjars" % "angularjs" % "1.2.16-2" exclude("org.webjars", "jquery")
 )
 
-playScalaSettings
+// sbt-web
 
-resolvers += "typesafe" at "http://repo.typesafe.com/typesafe/repo"
+pipelineStages := Seq(rjs, digest/*, gzip*/)
 
-// This tells Play to optimize this file and its dependencies
-requireJs += "main.js"
+// RequireJS, https://github.com/sbt/sbt-rjs#sbt-rjs
+
+
+//RjsKeys.mainModule := "main"
+
+// Cannot use a simple build.js
+
+//, "requirejs" -> j"empty:"
+
+//++
+
+RjsKeys.webJarModuleIds := Set("requirejs", "underscorejs", "jquery", "bootstrap", "angular", "angular-route", "angular-cookies", "jsRoutes")
+
+//val pathMap = Map("jsRoutes" -> j"empty:") ++ (RjsKeys.buildProfile.value.get("paths").getOrElse(Seq.empty[String]))
+
+//val paths = pathMap.toJS
+
+//RjsKeys.buildProfile := Map("paths" -> paths) // ++  RjsKeys.webJarModuleIds.value.map(m => m -> j"empty:").toMap.toJS
 
 // The main config file
 // See http://requirejs.org/docs/optimization.html#mainConfigFile
-requireJsShim := "build.js"
-
-// To completely override the optimization process, use this config option:
-//requireNativePath := Some("node r.js -o name=main out=javascript-min/main.min.js")
+//requireJsShim := "build.js"
