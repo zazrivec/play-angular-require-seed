@@ -1,9 +1,9 @@
 import PlayKeys._
 import com.typesafe.sbt.web.SbtWeb.autoImport.WebJs._
 
-/*
- * Project Setup
- */
+//
+// Project Setup
+//
 
 // Enable Play-Scala via its sbt auto-settings
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
@@ -30,10 +30,10 @@ libraryDependencies ++= Seq(
   "org.webjars" % "angularjs" % "1.2.16-2" exclude("org.webjars", "jquery")
 )
 
-/*
- * Scala Compiler Options
- * If this project is only a subproject, add these a common project setting.
- */
+//
+// Scala Compiler Options
+// If this project is only a subproject, add these a common project setting.
+ //
 scalacOptions ++= Seq(
   "-target:jvm-1.7",
   "-encoding", "UTF-8",
@@ -45,10 +45,10 @@ scalacOptions ++= Seq(
   "-Ywarn-value-discard" // Warn when non-Unit expression results are unused
 )
 
-/*
- * sbt-web configuration
- * https://github.com/sbt/sbt-web
- */
+//
+// sbt-web configuration
+// https://github.com/sbt/sbt-web
+//
 
 // Configure the steps of the asset pipeline (used in stage and dist tasks)
 // rjs = RequireJS, uglifies, shrinks to one file, replaces WebJars with CDN
