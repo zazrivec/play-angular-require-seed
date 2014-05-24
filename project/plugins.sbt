@@ -11,7 +11,7 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-jshint" % "1.0.0-RC2")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-less" % "1.0.0-RC2")
 
-addSbtPlugin("com.typesafe.sbt" % "sbt-rjs" % "1.0.0-RC3")
+addSbtPlugin("com.typesafe.sbt" % "sbt-rjs" % "1.0.0-2014-05-24-62a6f46")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-digest" % "1.0.0-RC2")
 

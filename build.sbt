@@ -24,16 +24,12 @@ pipelineStages := Seq(rjs, digest/*, gzip*/)
 
 // RequireJS, https://github.com/sbt/sbt-rjs#sbt-rjs
 
-
 //RjsKeys.mainModule := "main"
 
+//RjsKeys.webJarModuleIds := Set("requirejs", "underscorejs", "jquery", "bootstrap", "angular", "angular-route", "angular-cookies", "jsRoutes")
+
+
 // Cannot use a simple build.js
-
-//, "requirejs" -> j"empty:"
-
-//++
-
-RjsKeys.webJarModuleIds := Set("requirejs", "underscorejs", "jquery", "bootstrap", "angular", "angular-route", "angular-cookies", "jsRoutes")
 
 //val pathMap = Map("jsRoutes" -> j"empty:") ++ (RjsKeys.buildProfile.value.get("paths").getOrElse(Seq.empty[String]))
 
