@@ -54,13 +54,13 @@ scalacOptions ++= Seq(
 // rjs = RequireJS, uglifies, shrinks to one file, replaces WebJars with CDN
 // digest = Adds hash to filename
 // gzip = Zips all assets, Asset controller serves them automatically when client accepts them
-pipelineStages := Seq(rjs, digest/*, gzip*/)
+pipelineStages := Seq(rjs, digest, gzip)
 
 // RequireJS, https://github.com/sbt/sbt-rjs#sbt-rjs
 
 //RjsKeys.mainModule := "main"
 
-RjsKeys.paths += ("jsRoutes" -> ("/jsroutes","empty:"))
+RjsKeys.paths += ("jsRoutes" -> ("/jsroutes" -> "empty:"))
 
 // Cannot use a simple build.js
 //val pathMap = Map("jsRoutes" -> j"empty:") ++ (RjsKeys.buildProfile.value.get("paths").getOrElse(Seq.empty[String]))
