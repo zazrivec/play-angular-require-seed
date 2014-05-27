@@ -60,7 +60,7 @@ pipelineStages := Seq(rjs, digest/*, gzip*/)
 
 //RjsKeys.mainModule := "main"
 
-RjsKeys.paths += ("jsRoutes" -> ("empty:","empty:"))
+RjsKeys.paths += ("jsRoutes" -> ("/jsroutes","empty:"))
 
 // Cannot use a simple build.js
 //val pathMap = Map("jsRoutes" -> j"empty:") ++ (RjsKeys.buildProfile.value.get("paths").getOrElse(Seq.empty[String]))
