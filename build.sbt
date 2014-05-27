@@ -32,7 +32,7 @@ libraryDependencies ++= Seq(
 
 //
 // Scala Compiler Options
-// If this project is only a subproject, add these a common project setting.
+// If this project is only a subproject, add these to a common project setting.
  //
 scalacOptions ++= Seq(
   "-target:jvm-1.7",
@@ -60,7 +60,8 @@ pipelineStages := Seq(rjs, digest/*, gzip*/)
 
 //RjsKeys.mainModule := "main"
 
-//RjsKeys.webJarModuleIds := Set("requirejs", "underscorejs", "jquery", "bootstrap", "angular", "angular-route", "angular-cookies", "jsRoutes")
+RjsKeys.paths += ("jsRoutes" -> ("empty:","empty:"))
+
 // Cannot use a simple build.js
 //val pathMap = Map("jsRoutes" -> j"empty:") ++ (RjsKeys.buildProfile.value.get("paths").getOrElse(Seq.empty[String]))
 //val paths = pathMap.toJS
