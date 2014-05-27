@@ -2,14 +2,14 @@
  * Home controllers.
  */
 define([], function() {
-  "use strict";
+  'use strict';
 
   /** Controls the index page */
   var HomeCtrl = function($scope, $rootScope, $location, helper) {
     console.log(helper.sayHi());
-    $rootScope.pageTitle = "Welcome";
+    $rootScope.pageTitle = 'Welcome';
   };
-  HomeCtrl.$inject = ["$scope", "$rootScope", "$location", "helper"];
+  HomeCtrl.$inject = ['$scope', '$rootScope', '$location', 'helper'];
 
   /** Controls the header */
   var HeaderCtrl = function($scope, userService, helper, $location) {
@@ -24,15 +24,15 @@ define([], function() {
     $scope.logout = function() {
       userService.logout();
       $scope.user = undefined;
-      $location.path("/");
+      $location.path('/');
     };
   };
-  HeaderCtrl.$inject = ["$scope", "userService", "helper", "$location"];
+  HeaderCtrl.$inject = ['$scope', 'userService', 'helper', '$location'];
 
   /** Controls the footer */
   var FooterCtrl = function(/*$scope*/) {
   };
-  //FooterCtrl.$inject = ["$scope"];
+  //FooterCtrl.$inject = ['$scope'];
 
   return {
     HeaderCtrl: HeaderCtrl,
