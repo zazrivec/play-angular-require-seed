@@ -1,12 +1,4 @@
-import PlayKeys._
-import com.typesafe.sbt.web.SbtWeb.autoImport.WebJs._
-
-//
-// Project Setup
-//
-
 // Enable Play-Scala via its sbt auto-settings
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 // TODO Replace with your project's/module's name
 name := "play-angular-require-seed"
@@ -14,14 +6,18 @@ name := "play-angular-require-seed"
 // TODO Set your organization here
 organization := "your.organization"
 
-version := "2.3.0-RC2"
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
+
+version := "2.3.0"
 
 // Scala Version, Play supports both 2.10 and 2.11
-scalaVersion := "2.10.4"
-//scalaVersion := "2.11.1"
+//scalaVersion := "2.10.4"
+scalaVersion := "2.11.1"
 
 // Dependencies
 libraryDependencies ++= Seq(
+  filters,
+  cache,
   // WebJars (i.e. client-side) dependencies
   "org.webjars" % "requirejs" % "2.1.11-1",
   "org.webjars" % "underscorejs" % "1.6.0-3",
@@ -56,30 +52,25 @@ scalacOptions ++= Seq(
 // gzip = Zips all assets, Asset controller serves them automatically when client accepts them
 pipelineStages := Seq(rjs, digest, gzip)
 
-// RequireJS, https://github.com/sbt/sbt-rjs#sbt-rjs
-
-//RjsKeys.mainModule := "main"
-
+// RequireJS with sbt-rjs (https://github.com/sbt/sbt-rjs#sbt-rjs)
+// ~~~
 RjsKeys.paths += ("jsRoutes" -> ("/jsroutes" -> "empty:"))
 
-// Cannot use a simple build.js
-//val pathMap = Map("jsRoutes" -> j"empty:") ++ (RjsKeys.buildProfile.value.get("paths").getOrElse(Seq.empty[String]))
-//val paths = pathMap.toJS
+//RjsKeys.mainModule := "main"
 //RjsKeys.buildProfile := Map("paths" -> paths) // ++  RjsKeys.webJarModuleIds.value.map(m => m -> j"empty:").toMap.toJS
 
-// The main config file
-// See http://requirejs.org/docs/optimization.html#mainConfigFile
-//requireJsShim := "build.js"
-
-// sbt-digest (https://github.com/sbt/sbt-digest)
+// Asset hashing with sbt-digest (https://github.com/sbt/sbt-digest)
+// ~~~
 // md5 | sha1
 //DigestKeys.algorithms := "md5"
 //includeFilter in digest := "..."
 //excludeFilter in digest := "..."
 
-// sbt-gzip (https://github.com/sbt/sbt-gzip)
+// HTTP compression with sbt-gzip (https://github.com/sbt/sbt-gzip)
+// ~~~
 // includeFilter in GzipKeys.compress := "*.html" || "*.css" || "*.js"
 // excludeFilter in GzipKeys.compress := "..."
 
-// sbt-jshint (https://github.com/sbt/sbt-jshint)
+// JavaScript linting with sbt-jshint (https://github.com/sbt/sbt-jshint)
+// ~~~
 // JshintKeys.config := ".jshintrc"
