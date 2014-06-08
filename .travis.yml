@@ -1,8 +1,8 @@
 language: scala
 scala:
-- 2.10.4
+- 2.11.1
 env:
-- PLAY_VERSION=2.2.3
+- PLAY_VERSION=2.3.0
 before_script: 
 script:
 - sbt test
